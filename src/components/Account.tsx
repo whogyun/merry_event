@@ -13,7 +13,8 @@ import IconDocument from "../images/document.png";
 
 const BankContainer = styled.div`
   background-color: #fff;
-  padding: 18px 10px 29px;
+  // padding: 18px 10px 29px;
+  padding: 18px 36px 29px;
   letter-spacing: initial;
   line-height: initial;
   display: flex;
@@ -90,7 +91,8 @@ const BankItem = ({
           //   flexWrap: "nowrap",
           flexDirection: "column",
           justifyContent: "center",
-          gap: "15px"
+          gap: "15px",
+          alignItems: 'center'
         }}
       >
         {["신랑", "신부"].includes(item.label) && (

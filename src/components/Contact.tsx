@@ -143,6 +143,7 @@ function Contact() {
     }, [figure]);
 
   return (
+    <>
     <Div ref={target} $isvisible={figure.toString()}>
       <Title>CONTACT</Title>
 
@@ -171,6 +172,7 @@ function Contact() {
           
       </ModalWrapper>
       
+    </Div>
       <Modal open={!!open} onClose={handleModalClose}>
         <ContactListContainer $sex={open}>
           {/* <div style={{textAlign: 'end'}}>
@@ -234,7 +236,7 @@ function Contact() {
           </Ul>
         </ContactListContainer>
       </Modal>
-    </Div>
+      </>
   );
 }
 

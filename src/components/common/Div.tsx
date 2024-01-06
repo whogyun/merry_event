@@ -1,13 +1,13 @@
 import styled from "styled-components";
+// ${({$isvisible}) => 
+//   ({opacity: $isvisible==='true' ? '1': '0'})
+// }
 
 const Div = styled("div")<{$isvisible?:string}>`
   padding: 30px;
   padding-bottom: 120px;
 
-  ${({$isvisible}) => 
-    ({opacity: $isvisible==='true' ? '1': '0'})
-  }
-  
+  opacity: 0;
 
   @media (max-width: 380px) {
     padding: 30px;
@@ -27,8 +27,10 @@ const Div = styled("div")<{$isvisible?:string}>`
     }
   }
   ${({$isvisible}) => 
-    ({animation: $isvisible==='true' ? 'smoothAppear3 2s ease 0.2s': 'none'})
+    ({animation: $isvisible==='true' ? 'smoothAppear3 2s ease 0.4s': 'none'})
   }
+  animation-fill-mode: forwards;
+
   `;
 
 

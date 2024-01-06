@@ -43,7 +43,7 @@ background-color: #F4F4F4;
 
 const Button = styled("button")`
 height: 33px;
-width: 112px;
+min-width: 112px;
 border-radius: 25px;
 background-color: transparent;
     border-width: 0;
