@@ -2,7 +2,7 @@ import React, { useCallback, useState, useEffect, useRef, ChangeEventHandler } f
 import styled from "styled-components";
 import Div from "./common/Div";
 import Title from "./common/Title";
-
+import { PrismaClient } from "@prisma/client";
 import Modal from "./common/Modal";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -111,7 +111,7 @@ const Item = ({ item }: { item: { from: string; content: string } }) => {
 };
 
 function GuestBook() {
-
+  const client = new PrismaClient();
   const divRef = useRef<HTMLDivElement>(null)
   const [open, setOpen] = useState(false);
   const [writer, setWriter] = useState('');
@@ -144,10 +144,44 @@ function GuestBook() {
   //     }
   //   }
   // }, [])
+ useEffect(() => {
+    console.log('aaaa')
 
+            axios.post('http://localhost:9292/guestBook/list.json')
+            .then((response)=>
+            {
+                console.log('response', response)
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .then(function () {
+                // always executed
+            });
+
+  }, [])
   const onSubmit = useCallback(() => {
     console.log('writer  ', writer);
     console.log('content  ', content);
+
+            const formData = new FormData();
+            formData.append('writer',writer);
+            formData.append('content', content);
+
+            axios.post('http://localhost:9292/guestBook/insertInfo.json',formData)
+            .then((response)=>
+            {
+                console.log('response', response)
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .then(function () {
+                // always executed
+            });
+
   }, [writer, content])
 
   // const handleWriterChange = ((v:ChangeEventHandler<HTMLInputElement>) => {

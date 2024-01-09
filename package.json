@@ -17,6 +17,7 @@
     "@types/react-lazyload": "^3.2.3",
     "@types/styled-components": "^5.1.32",
     "axios": "^1.6.3",
+    "express": "^4.18.2",
     "mysql": "^2.18.1",
     "prisma": "^5.7.1",
     "react": "^18.2.0",
