@@ -105,7 +105,7 @@ function App() {
       content: {
         title: '김태양 ♥ 우명균 결혼식에 초대합니다.',
         description: '2024.03.10 PM 2:50 그레이스 파티',
-        imageUrl: 'http://www.xn--p89anwi80ag7k8wn9sh.com/static/media/kakao_background.7219b8443f4df4728fc0.jpg',
+        imageUrl: 'http://www.xn--p89anwi80ag7k8wn9sh.com/static/media/kakao_background.0640c5ffe47570f292aa.jpg',
         link: {
           mobileWebUrl: 'http://www.태양명균결혼.com',
           webUrl: 'http://www.태양명균결혼.com',
