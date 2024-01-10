@@ -147,7 +147,7 @@ function GuestBook() {
  useEffect(() => {
     console.log('aaaa')
 
-            axios.post('http://localhost:9292/guestBook/list.json')
+            axios.post('http://43.203.47.37:8080/guestBook/list.json')
             .then((response)=>
             {
                 console.log('response', response)
@@ -169,7 +169,7 @@ function GuestBook() {
             formData.append('writer',writer);
             formData.append('content', content);
 
-            axios.post('http://localhost:9292/guestBook/insertInfo.json',formData)
+            axios.post('http://43.203.47.37:8080/guestBook/insertInfo.json',formData)
             .then((response)=>
             {
                 console.log('response', response)
