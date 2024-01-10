@@ -1,6 +1,6 @@
 @font-face {
   font-family: "AppleMyungjo";
-  src: url("fonts/AppleMyungjo.ttf");
+  src: url("fonts/NanumMyeongjo-Regular.ttf") format('truetype');
 }
 @font-face {
   font-family: "Brand";
@@ -14,6 +14,9 @@ body {
   /* color: #747474; */
   color: #000;
   margin: 0;
+
+  font-display:block;
+  touch-action: manipulation;
 
   font-family: "AppleMyungjo", "Bodoni 72", "Lao MN", sans-serif;
   -webkit-font-smoothing: antialiased;

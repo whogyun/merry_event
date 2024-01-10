@@ -8,6 +8,10 @@ import MainImage from "./images/main.jpg";
 import IconLink from "./images/link.png";
 import IconKakao from "./images/ico_kakao.png";
 
+import KakaoBackground from "./images/kakao_background.jpg";
+
+
+
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import axios from 'axios'
@@ -99,9 +103,9 @@ function App() {
       kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
-        title: '우명균 ❤️ 김태양의 결혼식',
-        description: '우명균 ❤️ 김태양의 결혼식에 여러분을 초대합니다. 많은 관심과 사랑 부탁드립니다.',
-        imageUrl: 'http://www.xn--p89anwi80ag7k8wn9sh.com/static/media/main.1befe6d6d569c9ff1efe.jpg',
+        title: '김태양 ♥ 우명균 결혼식에 초대합니다.',
+        description: '2024.03.10 PM 2:50 그레이스 파티',
+        imageUrl: 'http://www.xn--p89anwi80ag7k8wn9sh.com/static/media/kakao_background.0640c5ffe47570f292aa.jpg',
         link: {
           mobileWebUrl: 'http://www.태양명균결혼.com',
           webUrl: 'http://www.태양명균결혼.com',
@@ -175,7 +179,9 @@ function App() {
         <BottomDiv>
         <button onClick={handleClickKakao}>
         <img src={IconKakao} alt='' style={{ marginRight: "4px", width: '16px', height: '16px' }}/>
-        카카오로 공유하기</button>
+        <img src={KakaoBackground} alt='' style={{ marginRight: "4px", width: '16px', height: '16px', display: 'none' }}/>
+        카카오로 공유하기
+        </button>
         
         <CopyToClipboard text={'http://www.태양명균결혼.com'}
           onCopy={() => alert('청첩장 링크가 복사되었습니다 :)')}>

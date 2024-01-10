@@ -149,6 +149,7 @@ const Album = styled.div`
   height: 400px;
   width: 100%;
   box-sizing: border-box;
+  margin-top: 42px;
 `;
 
 const Div1 = styled.div`
@@ -167,7 +168,7 @@ const ModalContainer = styled.div`
   width: 90vw;
   height: 80vh;
   // background-color: #FFF;
-  padding: 10px;
+  // padding: 10px;
   border-radius: 25px;
   position: relative;
 `
@@ -176,7 +177,7 @@ const Close = styled.div`
       position: absolute;
     z-index: 2;
     right: 10px;
-    top: 4px;
+    top: -14px;
     
 `
 
@@ -288,7 +289,7 @@ function Gallery() {
       <Div2>좌우로 넘기시면 더 많은 사진을 보실 수 있습니다</Div2>
     </Div>
 
-    <Modal open={modalOpen} onClose={handleModalClose} disableBackClick>
+    <Modal open={modalOpen} onClose={handleModalClose}>
     <ModalContainer>
     <Close onClick={handleModalClose}>
     <CloseRounded />
@@ -310,7 +311,7 @@ function Gallery() {
         >
           {imgs.map((v, idx) => 
           <SwiperSlide key={idx}>
-          <LazyLoad  once style={{width:'100%', height:'100%'}}>
+          <LazyLoad  once style={{ height:'100%'}}>
         
           <img src={v} alt='' />
 </LazyLoad>
