@@ -15,14 +15,14 @@ const ItemGroup = styled.div`
   flex-direction: column;
   gap: 10px;
   text-align: start;
-  height: 340px;
+  max-height: 340px;
   overflow: auto;
 `;
 
 const ItemWrapper = styled.div`
   border-radius: 22px;
   box-shadow: 0 0 6px 0 rgb(0, 0, 0, 0.16);
-  height: 90px;
+  //height: 90px;
   padding: 20px;
   box-sizing: border-box;
   width: calc(100% - 6px);
@@ -99,12 +99,31 @@ const FromDiv = styled.div`
 const ContentDiv = styled.div`
 `
 
+const BlankDiv = styled.div`
+display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: start;
+    min-height: 100px;
+    color: #8C8C8C;
+    border-radius: 30px;
+    background-color: #F6F6F6;
+    max-height: 340px;
+    overflow: auto;
+    align-items: center;
+    justify-content: center;`
 
-
-const Item = ({ item }: { item: { from: string; content: string } }) => {
+const Item = ({ item }: { item: {
+  boardId : number;
+content:string;
+deletedate:string;
+regdate:string;
+updatedate:string;
+writer:string;
+  } }) => {
   return (
     <ItemWrapper>
-      <FromDiv>{`From. ${item.from}`}</FromDiv>
+      <FromDiv>{`From. ${item.writer}`}</FromDiv>
       <ContentDiv>{item.content}</ContentDiv>
     </ItemWrapper>
   );
@@ -117,8 +136,19 @@ function GuestBook() {
   const [writer, setWriter] = useState('');
   const [content, setContent] = useState('');
 
+  const [dataList, setDataList] = useState<{
+  boardId : number;
+content:string;
+deletedate:string;
+regdate:string;
+updatedate:string;
+writer:string;
+  }[]>([])
+
   const handleModalClose = useCallback(() => {
     setOpen(false);
+    setWriter('')
+            setContent('')
   }, []);
 
   // useEffect(() => {
@@ -144,13 +174,14 @@ function GuestBook() {
   //     }
   //   }
   // }, [])
+
  useEffect(() => {
-    console.log('aaaa')
+    // console.log('aaaa')
 
             axios.post('http://43.203.47.37:8080/guestBook/list.json')
             .then((response)=>
             {
-                console.log('response', response)
+                setDataList(response.data.root)
             })
             .catch(function (error) {
                 // handle error
@@ -162,9 +193,10 @@ function GuestBook() {
 
   }, [])
   const onSubmit = useCallback(() => {
-    console.log('writer  ', writer);
-    console.log('content  ', content);
-
+    // console.log('writer  ', writer);
+    // console.log('content  ', content);
+      if (writer && content) {
+        
             const formData = new FormData();
             formData.append('writer',writer);
             formData.append('content', content);
@@ -172,7 +204,10 @@ function GuestBook() {
             axios.post('http://43.203.47.37:8080/guestBook/insertInfo.json',formData)
             .then((response)=>
             {
-                console.log('response', response)
+                axios.post('http://43.203.47.37:8080/guestBook/list.json')
+            .then((response)=>
+            {
+                setDataList(response.data.root)
             })
             .catch(function (error) {
                 // handle error
@@ -181,6 +216,21 @@ function GuestBook() {
             .then(function () {
                 // always executed
             });
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .then(function () {
+                // always executed
+            });
+            setOpen(false)
+            setWriter('')
+            setContent('')
+      } else {
+        alert('작성자와 내용을 모두 입력해주세요 :)')
+      }
+
 
   }, [writer, content])
 
@@ -260,16 +310,9 @@ function GuestBook() {
       <Div1>신랑, 신부에게 전하는 말씀</Div1>
 
       <ItemGroup ref={divRef}>
-        {[
-          { from: "맹골", content: "잘살아라" },
-          { from: "맹골2", content: "잘살아라" },
-          { from: "맹골3", content: "잘살아라" },
-          { from: "맹골4", content: "잘살아라" },
-          { from: "맹골5", content: "잘살아라" },
-          { from: "맹골6", content: "잘살아라" }
-        ].map((v, idx) => (
+        {dataList.length < 1 ? (<BlankDiv>신랑, 신부에게 축복의 말씀을 전해주세요!</BlankDiv>) :(dataList.map((v, idx) => (
           <Item item={v} key={idx}/>
-        ))}
+        )))}
       </ItemGroup>
 
       <div>

@@ -105,18 +105,18 @@ function App() {
       content: {
         title: '김태양 ♥ 우명균 결혼식에 초대합니다.',
         description: '2024.03.10 PM 2:50 그레이스 파티',
-        imageUrl: 'http://www.xn--p89anwi80ag7k8wn9sh.com/static/media/kakao_background.0640c5ffe47570f292aa.jpg',
+        imageUrl: 'http://married-beans.com/static/media/kakao_background.0640c5ffe47570f292aa.jpg',
         link: {
-          mobileWebUrl: 'http://www.태양명균결혼.com',
-          webUrl: 'http://www.태양명균결혼.com',
+          mobileWebUrl: 'http://married-beans.com',
+          webUrl: 'http://married-beans.com',
         },
       },
       buttons: [
         {
           title: '웹으로 보기',
           link: {
-            mobileWebUrl: 'http://www.태양명균결혼.com',
-            webUrl: 'http://www.태양명균결혼.com',
+            mobileWebUrl: 'http://married-beans.com',
+            webUrl: 'http://married-beans.com',
           },
         },
       ],
@@ -183,7 +183,7 @@ function App() {
         카카오로 공유하기
         </button>
         
-        <CopyToClipboard text={'http://www.태양명균결혼.com'}
+        <CopyToClipboard text={'http://married-beans.com'}
           onCopy={() => alert('청첩장 링크가 복사되었습니다 :)')}>
           <button>
           <img src={IconLink} alt='' style={{ marginRight: "4px", width: '16px', height: '16px' }}/>

@@ -95,7 +95,7 @@ const BankItem = ({
           alignItems: 'center'
         }}
       >
-        {["신랑", "신부"].includes(item.label) && (
+        {["신랑", "신부"].includes(item.label) ? (
           <KakaoButton
             onClick={() => {
               window.open(item.label === '신부' ? 'https://qr.kakaopay.com/FSGetpQBl' : "https://qr.kakaopay.com/Ej7jXKLag");
@@ -108,6 +108,10 @@ const BankItem = ({
             />
             카카오페이 송금
           </KakaoButton>
+        ) : (
+          <div style={{whiteSpace: 'nowrap'}}>
+            {item.bank}
+          </div>
         )}
         
         <CopyToClipboard
