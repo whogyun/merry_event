@@ -103,9 +103,9 @@ function App() {
       kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
-        title: '김태양 ♥ 우명균 결혼식에 초대합니다.',
-        description: '2024.03.10 PM 2:50 그레이스 파티',
-        imageUrl: 'http://married-beans.com/static/media/kakao_background.0640c5ffe47570f292aa.jpg',
+        title: '정찬용 ♥ 최인하 결혼식에 초대합니다.',
+        description: '2024.08.25 AM 11:00 W스퀘어컨벤션',
+        imageUrl: 'http://localhost:3000/static/media/main.40a62f79f1da50fa390a.jpg',
         link: {
           mobileWebUrl: 'http://married-beans.com',
           webUrl: 'http://married-beans.com',

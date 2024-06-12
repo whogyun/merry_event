@@ -94,7 +94,7 @@ const Line1 = styled.div`
 const Line2 = styled.div`
   font-size: 32px;
   line-height: 41px;
-  margin: 14px 0 34px;
+  margin: 14px 0 25px;
 `
 const Line3 = styled.div`
   font-size: 15px;
@@ -108,9 +108,9 @@ function Main() {
         <TextBox>
           <Line1>SAVE THE DATE</Line1>
           <Line2>WE'RE GETTING MARRIED</Line2>
-          <Line3>{'TAE YANG & MYUNG GYUN'}
+          <Line3>{'CHAN YONG & IN HA'}
           <br />
-          2024.03.10 PM 2:50
+          2024.08.25 AM 11:00
           </Line3>
         </TextBox>
       </Div>

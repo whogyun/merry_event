@@ -187,32 +187,32 @@ function Information() {
             title: "DINING",
             back: imgDining,
             content:
-              "식사는 결혼식 및 사진 촬영이 끝난 후\r\n웨딩홀 5층에서 뷔페식으로 진행됩니다.\r\n부족함 없이 즐기실 수 있도록\r\n다양한 메뉴가 준비되어 있습니다."
+              "식사는 결혼식 및 사진 촬영이 끝난 후\r\n웨딩홀 7층에서 뷔페식으로 진행됩니다.\r\n부족함 없이 즐기실 수 있도록\r\n다양한 메뉴가 준비되어 있습니다."
           },
           {
             title: "VENUE",
             back: imgVenue,
             content:
-              "단독홀로 진행되는 그레이스파티홀에서\r\n저희 두 사람의 웨딩이 진행됩니다."
-          },
-          {
-            title: "PHOTO BOOTH",
-            back: imgPhotoBooth,
-            content:
-              "참석 해주신 분들을 기억하고자\r\n포토 부스를 준비 했습니다.\r\n귀한 발걸음 해주신 여러분의\r\n환한 미소와 따뜻한 말씀 남겨주시면\r\n소중히 간직하도록 하겠습니다."
+              "단독홀로 진행되는 채플홀에서\r\n저희 두 사람의 웨딩이 진행됩니다."
           },
           {
             title: "PARKING",
             back: imgParking,
             content:
-              "웨딩홀 바로 옆 주차건물에 주차 시\r\n2시간 무료주차가 가능하며,\r\n따로 주차권없이 출차 가능합니다."
+              "웨딩홀 건물에 주차 시\r\n2시간 무료주차가 가능하며,\r\n따로 주차권없이 출차 가능합니다."
           },
-          {
-            title: "SUTTLE BUS",
-            back: imgSuttleBus,
-            content:
-              "신림역 5번출구 앞 셔틀버스가 운행됩니다.\r\n셔틀버스는 15분 간격으로 운행되니,\r\n참고 부탁드립니다.\r\n(공사 시 6번출구 이용)"
-          }
+          // {
+          //   title: "PHOTO BOOTH",
+          //   back: imgPhotoBooth,
+          //   content:
+          //     "참석 해주신 분들을 기억하고자\r\n포토 부스를 준비 했습니다.\r\n귀한 발걸음 해주신 여러분의\r\n환한 미소와 따뜻한 말씀 남겨주시면\r\n소중히 간직하도록 하겠습니다."
+          // },
+          // {
+          //   title: "SUTTLE BUS",
+          //   back: imgSuttleBus,
+          //   content:
+          //     "신림역 5번출구 앞 셔틀버스가 운행됩니다.\r\n셔틀버스는 15분 간격으로 운행되니,\r\n참고 부탁드립니다.\r\n(공사 시 6번출구 이용)"
+          // }
         ].map(({ title, content, back }, idx) => (
           <SwiperSlide key={idx}>
           <Item >

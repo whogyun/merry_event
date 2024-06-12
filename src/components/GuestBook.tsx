@@ -310,9 +310,14 @@ writer:string;
       <Div1>신랑, 신부에게 전하는 말씀</Div1>
 
       <ItemGroup ref={divRef}>
-        {dataList.length < 1 ? (<BlankDiv>신랑, 신부에게 축복의 말씀을 전해주세요!</BlankDiv>) :(dataList.map((v, idx) => (
-          <Item item={v} key={idx}/>
-        )))}
+        {dataList.length < 12 ? (<BlankDiv>신랑, 신부에게 축복의 말씀을 전해주세요!</BlankDiv>) :(dataList.map((v, idx) => {
+          if (v.boardId < 20) {
+            return null
+          } else {
+
+            return <Item item={v} key={idx}/>
+          }
+        }))}
       </ItemGroup>
 
       <div>

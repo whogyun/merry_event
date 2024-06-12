@@ -7,7 +7,7 @@ import IconNaverNav from "../images/ico_nav_naver.png";
 import IconKakaoNav from "../images/ico_nav_kakao.png";
 import IconTNav from "../images/ico_nav_t.png";
 
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const CustomDiv = styled(Div)`
   padding-left: 0;
@@ -73,7 +73,7 @@ const ButtonWrapper = styled("div")`
     justify-content: center;
     align-items: center;
     position: relative;
-    font-family: 'Bodoni 72';
+    font-family: "Bodoni 72";
     white-space: nowrap;
   }
 
@@ -119,16 +119,15 @@ function Location() {
 
   useEffect(() => {
     if (mapRef.current) {
-      
       const kakaoMap = (window as any).kakao;
 
       if (kakaoMap.maps) {
         const options = {
           center: new kakaoMap.maps.LatLng(
-            37.48076469212664,
-            126.91073016597063
+            37.400623052972804,
+            127.1115170513737
           ),
-          level: 3
+          level: 3,
         };
 
         new kakaoMap.maps.Map(mapRef.current, options);
@@ -143,30 +142,30 @@ function Location() {
     }
   }, []);
 
-  const target = useRef<HTMLDivElement>(null)
+  const target = useRef<HTMLDivElement>(null);
 
   const [figure, setFigure] = useState(false);
 
-  const onIntersect = ([entry] : any[], observer:any) => {
-      if (entry.isIntersecting) {
-        
-        setFigure(true)
-        // entry.style.visibility= 'visible';
-        // entry.style.animation= 'smoothAppear3 2.5s ease 1s';
-        observer.unobserve(entry.target);
-        // await getMoreItem();
-        observer.observe(entry.target);
-      }
-    };
+  const onIntersect = ([entry]: any[], observer: any) => {
+    if (entry.isIntersecting) {
+      setFigure(true);
+      // entry.style.visibility= 'visible';
+      // entry.style.animation= 'smoothAppear3 2.5s ease 1s';
+      observer.unobserve(entry.target);
+      // await getMoreItem();
+      observer.observe(entry.target);
+    }
+  };
 
-    useEffect(() => {
-      if (target.current && !figure) {
-        
-        const observer = new IntersectionObserver(onIntersect as IntersectionObserverCallback);
-        observer.observe(target.current);
-        return () => observer.disconnect();
-      } 
-    }, [figure]);
+  useEffect(() => {
+    if (target.current && !figure) {
+      const observer = new IntersectionObserver(
+        onIntersect as IntersectionObserverCallback
+      );
+      observer.observe(target.current);
+      return () => observer.disconnect();
+    }
+  }, [figure]);
 
   return (
     <CustomDiv ref={target} $isvisible={figure.toString()}>
@@ -174,15 +173,17 @@ function Location() {
 
       <Div1>오시는 곳</Div1>
       <Div2>
-        서울특별시 관악구 남부순환로 1440
+        경기도 성남시 판교역로 226번길 16
         <br />
-        그레이스파티
+        더블유스퀘어
         <br />
-        02-858-1122
+        031-703-0116
       </Div2>
 
-      <CopyToClipboard text={"서울특별시 관악구 남부순환로 1440"}
-        onCopy={() => alert('주소가 복사되었습니다 :)')}>
+      <CopyToClipboard
+        text={"경기도 성남시 판교역로 226번길 16"}
+        onCopy={() => alert("주소가 복사되었습니다 :)")}
+      >
         <Button>주소 복사하기</Button>
       </CopyToClipboard>
 
@@ -196,7 +197,7 @@ function Location() {
             <button
               onClick={() => {
                 const loca =
-                  "https://map.naver.com/p/directions/-/14127660.6825621,4506350.1593227,%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%8A%A4%ED%8C%8C%ED%8B%B0,1957191009,PLACE_POI/-/transit?c=15.00,0,0,0,dh";
+                  "https://map.naver.com/p/directions/-/14149984.8268292,4495077.7812934,W%EC%8A%A4%ED%80%98%EC%96%B4%EC%BB%A8%EB%B2%A4%EC%85%98,36301790,PLACE_POI/-/transit?c=12.67,0,0,0,dh";
                 window.location.href = loca;
               }}
             >
@@ -210,7 +211,7 @@ function Location() {
             <button
               onClick={() => {
                 const loca =
-                  "https://map.kakao.com/link/to/그레이스파티,37.48076469212664,126.91073016597063";
+                  "https://map.kakao.com/link/to/W스퀘어컨벤션,37.400623052972804,127.1115170513737";
                 window.location.href = loca;
               }}
             >
@@ -223,7 +224,7 @@ function Location() {
             </button>
             <button
               onClick={() => {
-                const loca = "tmap://search?name=그레이스파티 신림";
+                const loca = "tmap://search?name=w스퀘어컨벤션 판교";
                 window.location.href = loca;
               }}
             >
@@ -237,34 +238,31 @@ function Location() {
           </ButtonWrapper>
         </div>
         <div>
-          <WayTitle>버스</WayTitle>
-          <WayContent>
-            관악구보훈회관 (신림푸르지오) 하차
-            <br />
-            <Dot style={{ backgroundColor: "#0C00FF" }} />
-            간선 : 500, 504, 643, 651
-            <br />
-            <Dot style={{ backgroundColor: "#00AC35" }} />
-            지선 : 5413, 5528, 5530, 5535, 5615, 6512, 9, 9-3
-          </WayContent>
-        </div>
-        <div>
-          <WayTitle>지하철</WayTitle>
-          <WayContent>
-            <Dot style={{ backgroundColor: "#00AC35" }} />
-            2호선 신림역 5번 출구 셔틀버스 운행
-            <br />
-            (신림역 5번출구 공사로 인하여 6번 출구 이용)
-            <br />
-            신대방역 2번 출구에서 도보 15분 소요
-          </WayContent>
-        </div>
-        <div>
           <WayTitle>주차</WayTitle>
           <WayContent>
-            그레이스파티 관악 웨딩홀 옆 주차타워 이용 가능
+            더블유스퀘어 주차타워 이용 가능 (200대)
+            <br />
+            삼환하이펙스 주차타워 이용 가능 (300대)
             <br />
             2시간 무료 주차
+          </WayContent>
+        </div>
+        <div>
+          <WayTitle>근처 카페</WayTitle>
+          <WayContent>
+            - 스타벅스 판교 HIPEX점 (도보 2분)
+            <br />
+            - 알레그리아 판교테크노밸리점 (도보 2분)
+            <br />
+            - 칼디커피더팜 (도보 2분)
+          </WayContent>
+        </div>
+        <div>
+          <WayTitle>근처 걷기 좋은 길</WayTitle>
+          <WayContent>
+            - 봇들저류지 공원 (도보 3분)
+            <br />
+            - 판교테크노파크공원 (도보 7분)
           </WayContent>
         </div>
       </Way>

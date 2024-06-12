@@ -98,7 +98,7 @@ const BankItem = ({
         {["신랑", "신부"].includes(item.label) ? (
           <KakaoButton
             onClick={() => {
-              window.open(item.label === '신부' ? 'https://qr.kakaopay.com/FSGetpQBl' : "https://qr.kakaopay.com/Ej7jXKLag");
+              window.open(item.label === '신부' ? "https://qr.kakaopay.com/Ej7oShq0R" : "https://qr.kakaopay.com/Ej7rzrbGh");
             }}
           >
             <img
@@ -218,18 +218,18 @@ function Account() {
                   {
                     child: {
                       label: "신랑",
-                      name: "김태양",
-                      bank: "신한 110-361-927627"
+                      name: "정찬용",
+                      bank: "신한 110-476-133457"
                     },
                     father: {
                       label: "아버지",
-                      name: "김정국",
-                      bank: "우리 1002-230-100521"
+                      name: "조봉희",
+                      bank: "새마을금고 9003-2449-7591-1"
                     },
                     mother: {
                       label: "어머니",
-                      name: "우춘화",
-                      bank: "우리 1002-529-990429"
+                      name: "이순남",
+                      bank: "새마을금고 9002-1830-6358-9"
                     }
                   }[maleAccount]
                 }
@@ -277,18 +277,18 @@ function Account() {
                   {
                     child: {
                       label: "신부",
-                      name: "우명균",
-                      bank: "카카오뱅크 3333-16-0535823"
+                      name: "최인하",
+                      bank: "국민 270901-04-212838"
                     },
                     father: {
                       label: "아버지",
-                      name: "우상헌",
-                      bank: "카카오뱅크 3333-26-2970675"
+                      name: "최동현",
+                      bank: "국민 662025-90-125639"
                     },
                     mother: {
                       label: "어머니",
-                      name: "김정희",
-                      bank: "카카오뱅크 3333-27-8100236"
+                      name: "강경희",
+                      bank: "농협 301-0275-9009-41"
                     }
                   }[femaleAccount]
                 }

@@ -153,7 +153,7 @@ function Contact() {
         <div>
           <ModalIcon style={{background: `url(${womenFace})`,backgroundSize: 'cover'}} />
           <PositionText>BRIDE</PositionText>
-          <div>우명균</div>
+          <div>최인하</div>
           <ModalButton onClick={() => setOpen(curr => (!!curr ? "" : "female"))}>
             <img src={iconPhone} alt='phone' style={{width: '17px', height: '17px'}}/>
             신부측
@@ -163,7 +163,7 @@ function Contact() {
         <div>
           <ModalIcon style={{background: `url(${manFace})`,backgroundSize: 'cover'}} />
           <PositionText>GROOM</PositionText>
-          <div>김태양</div>
+          <div>정찬용</div>
           <ModalButton onClick={() => setOpen(curr => (!!curr ? "" : "male"))}>
             <img src={iconPhone} alt='phone'  style={{width: '17px', height: '17px'}}/>
             신랑측
@@ -186,14 +186,14 @@ function Contact() {
           <Ul>
             {{
               male: [
-                { label: "신랑", name: "김태양", phone: "01098008346" },
-                { label: "신랑 아버지", name: "김정국", phone: "01024338346" },
-                { label: "신랑 어머니", name: "우춘화", phone: "01053538346" }
+                { label: "신랑", name: "정찬용", phone: "01034304090" },
+                { label: "신랑 아버지", name: "조봉희", phone: "01071958831" },
+                { label: "신랑 어머니", name: "이순남", phone: "01092395907" }
               ],
               female: [
-                { label: "신부", name: "우명균", phone: "01032216451" },
-                { label: "신부 아버지", name: "우상헌", phone: "01055703870" },
-                { label: "신부 어머니", name: "김정희", phone: "01087625272" }
+                { label: "신부", name: "최인하", phone: "01099049509" },
+                { label: "신부 아버지", name: "최동현", phone: "01091486259" },
+                { label: "신부 어머니", name: "강경희", phone: "01091476259" }
               ]
             }[open]?.map(({ label, name, phone }, idx) => (
               <li key={idx} style={{listStyle: '-'}}>
