@@ -305,6 +305,7 @@ writer:string;
     }, [figure]);
 
   return (
+    <>
     <Div ref={target} $isvisible={figure.toString()}>
       <Title>GUEST BOOK</Title>
       <Div1>신랑, 신부에게 전하는 말씀</Div1>
@@ -328,6 +329,7 @@ writer:string;
         {/* <button onClick={handleTest}>테스트</button> */}
       </div>
 
+    </Div>
       <Modal open={!!open} onClose={handleModalClose}>
         <WriteContainer>
         <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', justifyItems: 'start',     fontWeight: 700}}>
@@ -341,7 +343,7 @@ writer:string;
           작성하기</Button>
         </WriteContainer>
       </Modal>
-    </Div>
+    </>
   );
 }
 

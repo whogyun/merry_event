@@ -109,7 +109,7 @@ const BankItem = ({
             카카오페이 송금
           </KakaoButton>
         ) : (
-          <div style={{whiteSpace: 'nowrap'}}>
+          <div style={{whiteSpace: 'nowrap', fontSize: '0.8em'}}>
             {item.bank}
           </div>
         )}

@@ -105,18 +105,18 @@ function App() {
       content: {
         title: '정찬용 ♥ 최인하 결혼식에 초대합니다.',
         description: '2024.08.25 AM 11:00 W스퀘어컨벤션',
-        imageUrl: 'http://localhost:3000/static/media/main.40a62f79f1da50fa390a.jpg',
+        imageUrl: 'http://inha-chanyong.com/static/media/kakao_background.jpg',
         link: {
-          mobileWebUrl: 'http://married-beans.com',
-          webUrl: 'http://married-beans.com',
+          mobileWebUrl: 'http://inha-chanyong.com',
+          webUrl: 'http://inha-chanyong.com',
         },
       },
       buttons: [
         {
           title: '웹으로 보기',
           link: {
-            mobileWebUrl: 'http://married-beans.com',
-            webUrl: 'http://married-beans.com',
+            mobileWebUrl: 'http://inha-chanyong.com',
+            webUrl: 'http://inha-chanyong.com',
           },
         },
       ],
@@ -183,7 +183,7 @@ function App() {
         카카오로 공유하기
         </button>
         
-        <CopyToClipboard text={'http://married-beans.com'}
+        <CopyToClipboard text={'http://inha-chanyong.com'}
           onCopy={() => alert('청첩장 링크가 복사되었습니다 :)')}>
           <button>
           <img src={IconLink} alt='' style={{ marginRight: "4px", width: '16px', height: '16px' }}/>
